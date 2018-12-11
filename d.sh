@@ -1,4 +1,5 @@
-for ((i=34361;i<34425;i++)) ;
+echo "usage: bash d.sh bilibiliurl(before play/) beginint endint"
+for ((i=$2;i<${3}+1;i++)) ;
 do
-	you-get https://www.bilibili.com/bangumi/play/ep$i
+	you-get ${1}ep$i
 done
