@@ -22,4 +22,4 @@ if __name__ == "__main__":
     for item in filelist:
         clip = VideoFileClip(item)
         ftime += clip.duration
-    print(ftime,"seconds: ",str(datetime.timedelta(seconds=ftime)))
+    print("%d seconds: " % ftime,str(datetime.timedelta(seconds=ftime)))
