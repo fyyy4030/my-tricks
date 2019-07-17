@@ -53,7 +53,7 @@ for i in days:
 
 result = []
 for i in arglist:
-    result.append(query(i)[0])
+    result.append([query(i)[0],query(i)[1]])
 
 for i in range(len(strdays)):
     print(strdays[i], result[i])
