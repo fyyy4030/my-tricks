@@ -33,14 +33,19 @@ def datetostr(thisday):
     d = inttostr(nextday.day)
     return [a, b, c, d]
 
+
+
 today = datetime.datetime.today()
 
-days = [today]
+days = []
 for i in range(60):
+    if today.weekday() == 5:
+        days.append(today)
     today += datetime.timedelta(days=1)
-    days.append(today)
 
-
+strdays = []
+for i in days:
+    strdays.append(i.strftime('%Y-%m-%d'))
 
 arglist = []
 for i in days:
@@ -48,7 +53,7 @@ for i in days:
 
 result = []
 for i in arglist:
-    result.append(query(i))
+    result.append(query(i)[0])
 
-print(result)
-
+for i in range(len(strdays)):
+    print(strdays[i], result[i])
